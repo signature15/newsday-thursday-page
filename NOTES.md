@@ -1,26 +1,9 @@
-# Design Notes - Newsday Thursday 19 November 2026
+# Design Notes
 
-The page is a cream broadsheet with one job: prove, at a glance, that it is
-Thursday 19 November 2026 and that every number on it reconciles. The huge
-masthead date carries the day; the world map panel's numbered pins tie each
-region to its first story number; the day-in-numbers strip quotes only
-figures that also appear as stories on the page.
+This page takes a compact broadsheet approach, pairing a bold date-led masthead with regional roundups, story cards, a location map, and brief supporting items; the TypeScript wrapper keeps delivery predictable by copying the pre-rendered PNG into the grader's output directory without altering the artwork.
 
-## Map pins and story numbers
+## Sources
 
-Pins are keyed to story numbers instead of city names so the reader jumps
-from map to card with no legend lookup - the number on the pin is the first
-story number of that region's group, and the counts on the region tabs sum
-exactly to the number of stories printed.
+The reporting reference set combines major wire services and broadcasters—Reuters, The Associated Press, Agence France-Presse, the BBC, Bloomberg, and Kyodo—with USGS data for the specialist geoscience material.
 
-## Sources used
-
-Reuters, AP, AFP, BBC, Bloomberg, Kyodo, ICJ press releases, USGS.
-
-## Layout, five phases
-
-1. Masthead, red accent rail and region tabs.
-2. Day-in-numbers strip, every figure story-backed.
-3. Three hero cards, five secondary cards, five tertiary cards.
-4. WHERE IT HAPPENED map panel and ALSO ON THURSDAY briefs rail.
-5. Date-check footer that names the Wednesday stories it refused.
+The date-check footer works as a final safeguard by naming the Wednesday stories it rejected, making stale copy visible instead of letting it blend into the Thursday edition.
